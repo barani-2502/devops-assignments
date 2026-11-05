@@ -1,0 +1,24 @@
+[Unit]
+StartLimitIntervalSec=60
+StartLimitBurst=3
+Description=Testpress Python Background Worker
+After=network.target
+
+[Service]
+MemoryMax=50M
+MemorySwapMax=0
+CPUQuota=50%
+Type=exec
+User=testpress-worker
+Group=testpress-worker
+WorkingDirectory=/opt/testpress-worker
+EnvironmentFile=/etc/testpress-worker.env
+ExecStart=/usr/bin/python3 /opt/testpress-worker/app.py
+Restart=on-failure
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=testpress-worker
+
+[Install]
+WantedBy=multi-user.target

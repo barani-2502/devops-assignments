@@ -1,6 +1,6 @@
 # Testpress DevOps Learning Exercises
 
-Hands-on implementation of two DevOps exercises focused on infrastructure provisioning and file transfer automation.
+Hands-on implementation of DevOps exercises focused on infrastructure provisioning, file transfer automation, and Linux service management.
 
 ## Assignments
 
@@ -29,22 +29,32 @@ Topics:
 - Data integrity verification
 - Bash automation
 
+### 3. Linux Process Management and systemd
+
+Build a Python background service and manage it with systemd, without Docker or other process managers.
+
+Topics:
+- Processes and signals (SIGTERM vs SIGKILL)
+- Running a service as a dedicated non-root user
+- Automatic restarts and restart rate limiting
+- Failure investigation with systemctl and journalctl
+- CPU and memory limits with cgroups
+- Reboot persistence
+
 ## Development Environment
 
 - Host OS: Windows 11 Pro
 - Development environment: WSL 2 with Ubuntu 22.04
-- Target VM: Ubuntu 24.04
+- Target VM: Ubuntu 24.04 (Multipass)
 - Version control: Git and GitHub
 
 ## Repository Structure
 
-- `cloud-init-provisioning/` - First assignment
-- `rclone-file-transfer/` - Second assignment
+- `cloud-init-provisioning/` - Server provisioning with cloud-init
+- `rclone-file-transfer/` - File transfers with rclone
+- `linux-systemd/` - Process management and systemd
 
 ## Documentation
 
 Each assignment includes setup instructions, commands, verification results, observations and learnings.
 
-## Objective
-
-Build reproducible, automated infrastructure and storage workflows while understanding the underlying concepts.
